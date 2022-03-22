@@ -1,0 +1,18 @@
+.nav {
+    grid-area: n;
+    background-color: #225465;
+    border-right: 1px solid #fff;
+    padding-top: 5px;
+}
+
+.navMenu {
+    margin-left: 5px;
+}
+
+.item  {
+    color: white;
+}
+
+.item.active {
+    color: #328b41;
+}
