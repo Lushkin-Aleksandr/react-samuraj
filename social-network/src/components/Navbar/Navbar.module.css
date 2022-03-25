@@ -13,6 +13,8 @@
     color: white;
 }
 
-.item.active {
+.item .active {
     color: #328b41;
+    font-size: 20px;
+    /*transition: ease .5s;*/
 }
