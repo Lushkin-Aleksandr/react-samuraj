@@ -23,6 +23,23 @@ function Navbar() {
                     <NavLink to="/settings" className={navData => navData.isActive ? s.active : ''}>Settings</NavLink>
                 </li>
             </ul>
+            <div className={s.friends}>
+                <p className={s.friendsHeader}>Friends</p>
+                <div className={s.friendsItems}>
+                    <a href='' className={s.friendsItem}>
+                        <img src="https://cdn-icons-png.flaticon.com/512/147/147144.png" alt=""/>
+                        <span>Andrew</span>
+                    </a>
+                    <a href='' className={s.friendsItem}>
+                        <img src="https://cdn-icons-png.flaticon.com/512/147/147144.png" alt=""/>
+                        <span>Sasha</span>
+                    </a>
+                    <a href='' className={s.friendsItem}>
+                        <img src="https://cdn-icons-png.flaticon.com/512/147/147144.png" alt=""/>
+                        <span>Sveta</span>
+                    </a>
+                </div>
+            </div>
         </nav>
     )
 }

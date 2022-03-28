@@ -1,53 +1,40 @@
 import s from './Dialogs.module.css';
 import React from "react";
-import {NavLink} from "react-router-dom";
-
-const DialogItem = (props) => {
-    let path = `/dialogs/${props.id}`;
-    return (
-        <div className={`${s.dialog}`}>
-            <NavLink to={path} className={navData => navData.isActive ? s.active : ''}>{props.name}</NavLink>
-        </div>
-    )
-}
-
-const Message = (props) => {
-
-    return (
-        <div className={s.message}>
-            {props.message}
-        </div>
-    )
-}
+import DialogItem from "./DialogItem/DialogItem";
+import Message from "./Message/Message";
+import {addMessageActionCreator, updateNewMessageTextActionCreator} from "../../Redux/state";
 
 
 const Dialogs = (props) => {
+    let dialogsElements = props.dialogsPage.dialogsData.map(dialog => <DialogItem name={dialog.name} id={dialog.id}/>)
+    let messagesElements = props.dialogsPage.messagesData.map(message => <Message message={message.message}/>)
 
-    let dialogsData = [
-        {id: 1, name: 'Dimych' },
-        {id: 2, name: 'Andrey' },
-        {id: 3, name: 'Sveta' },
-        {id: 4, name: 'Sasha' },
-        {id: 5, name: 'Valera' }
-    ];
+    let addMessageTextarea = React.createRef();
+    let updateNewMessageText = () => {
+        let text = addMessageTextarea.current.value;
+        props.dispatch(updateNewMessageTextActionCreator(text));
+    };
+    let addMessage = () => {
+        props.dispatch(addMessageActionCreator());
+    };
 
-    let messagesData = [
-        {id: 1, message: 'Hi' },
-        {id: 2, message: 'How are you' },
-        {id: 3, message: 'oaoaoaoao' }
-    ]
-
-    let dialogsElements = dialogsData.map(dialog => <DialogItem name={dialog.name} id={dialog.id}/>)
-
-    let messagesElements = messagesData.map(message => <Message message={message.message}/>)
 
     return (
         <div className={s.dialogs}>
             <div className={s.dialogsItems}>
                 {dialogsElements}
             </div>
-            <div className={s.messages}>
-                {messagesElements}
+            <div className={s.messageWrapper}>
+                <div className={s.messages}>
+                    {messagesElements}
+                </div>
+                <div className={s.addMessage}>
+                    <textarea
+                        ref={addMessageTextarea}
+                        value={props.dialogsPage.newMessageText}
+                        onChange={updateNewMessageText}/>
+                    <button onClick={addMessage}>Add message</button>
+                </div>
             </div>
         </div>
     )

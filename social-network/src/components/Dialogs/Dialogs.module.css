@@ -1,14 +1,16 @@
 .dialogs {
-    display: grid;
-    grid-template-columns: 2fr 10fr;
+    /*display: grid;*/
+    /*grid-template-columns: 2fr 10fr;*/
+    display: flex;
 }
 
 .dialogsItems {
     padding: 10px;
+    min-width: 200px;
 }
 
-.dialog {
-
+.dialog:not(:last-child) {
+    margin-bottom: 5px;
 }
 
 .dialog .active {
@@ -16,10 +18,62 @@
     font-size: 20px;
 }
 
-.messages {
-    padding: 10px;
+.dialog .link {
+    display: flex;
+    align-items: flex-start;
+    padding: 5px;
+    border-radius: 5px;
 }
 
-.message {
+.dialog .link:hover {
+    background-color: rgba(255, 255, 255, .1);
+}
 
+.avatar {
+    width: 40px;
+    margin-right: 10px;
+}
+
+.messageWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.messages {
+    padding: 10px;
+    margin: 10px 10px 0px 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.36);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+}
+
+
+
+.message {
+    margin-bottom: 3px;
+    padding: 5px;
+    background-color: #c4d8ff;
+    border-radius: 5px;
+}
+
+.messageInner {
+
+}
+
+.addMessage {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.addMessage textarea {
+    flex-grow: 1;
+    resize: none;
+    outline: none;
+    padding: 3px;
 }
