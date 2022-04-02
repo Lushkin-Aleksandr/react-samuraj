@@ -7,7 +7,7 @@ import {addMessageActionCreator, updateNewMessageTextActionCreator} from "../../
 
 const Dialogs = (props) => {
 
-    let state = props.store.getState().dialogsPage;
+    let state = props.dialogsPage;
 
     let dialogsElements = state.dialogsData.map(dialog => <DialogItem name={dialog.name} id={dialog.id}/>)
     let messagesElements = state.messagesData.map(message => <Message message={message.message}/>)
@@ -15,10 +15,11 @@ const Dialogs = (props) => {
 
     let updateNewMessageText = (e) => {
         let text = e.target.value;
-        props.store.dispatch(updateNewMessageTextActionCreator(text));
+        props.updateNewMessageText(text);
+
     };
-    let addMessage = () => {
-        props.store.dispatch(addMessageActionCreator());
+    let onAddMessage = () => {
+        props.addMessage();
     };
 
 
@@ -36,7 +37,7 @@ const Dialogs = (props) => {
                         value={state.newMessageText}
                         placeholder={'Enter your message'}
                         onChange={updateNewMessageText}/>
-                    <button onClick={addMessage}>Add message</button>
+                    <button onClick={onAddMessage}>Add message</button>
                 </div>
             </div>
         </div>
