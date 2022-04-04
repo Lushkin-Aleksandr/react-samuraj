@@ -1,6 +1,7 @@
 import React from "react";
 import s from './Navbar.module.css';
 import {NavLink} from "react-router-dom";
+import avatarImg from '../../assets/images/avatar.png'
 
 
 function Navbar() {
@@ -12,6 +13,9 @@ function Navbar() {
                 </li>
                 <li className={s.item}>
                     <NavLink to="/dialogs" className={navData => navData.isActive ? s.active : ''}>Messages</NavLink>
+                </li>
+                <li className={s.item}>
+                    <NavLink to="/users" className={navData => navData.isActive ? s.active : ''}>Users</NavLink>
                 </li>
                 <li className={s.item}>
                     <NavLink to="/news" className={navData => navData.isActive ? s.active : ''}>News</NavLink>
@@ -27,15 +31,15 @@ function Navbar() {
                 <p className={s.friendsHeader}>Friends</p>
                 <div className={s.friendsItems}>
                     <a href='' className={s.friendsItem}>
-                        <img src="https://cdn-icons-png.flaticon.com/512/147/147144.png" alt=""/>
+                        <img src={avatarImg} alt=""/>
                         <span>Andrew</span>
                     </a>
                     <a href='' className={s.friendsItem}>
-                        <img src="https://cdn-icons-png.flaticon.com/512/147/147144.png" alt=""/>
+                        <img src={avatarImg} alt=""/>
                         <span>Sasha</span>
                     </a>
                     <a href='' className={s.friendsItem}>
-                        <img src="https://cdn-icons-png.flaticon.com/512/147/147144.png" alt=""/>
+                        <img src={avatarImg} alt=""/>
                         <span>Sveta</span>
                     </a>
                 </div>
