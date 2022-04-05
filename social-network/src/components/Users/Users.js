@@ -1,52 +1,57 @@
 import React from "react";
-import styles from './Users.module.css'
-import * as axios from "axios";
-import avatarImg from '../../assets/images/avatar.png'
+import styles from "./Users.module.css";
+import avatarImg from "../../assets/images/avatar.png";
+import {NavLink} from "react-router-dom";
 
-class Users extends React.Component {
 
-    follow = (userId) => {
-        this.props.follow(userId);
+const Users = (props) => {
+    let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
+    let pages = [];
+    for (let i = 1; i <= pagesCount; i++) {
+        pages.push(i);
     }
 
-    unfollow = (userId) => {
-        this.props.unfollow(userId);
-    }
-
-    componentDidMount() {
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users`)
-            .then(response => {
-                this.props.setUsers(response.data.items);
-            })
-    }
-    
-
-    render() {
+    let pageNumbers = pages.map(page => {
         return (
+            <span
+                className={`${props.currentPage === page ? styles.selectedPage : ''} ${styles.pageNumber}`}
+                onClick={(e) => props.setCurrentPage(page)}>
+                    {page}
+                </span>
+        )
+    });
+
+    return (
+        <div>
             <div>
-                {
-                    this.props.users.map(user => {
-                        return (
-                            <div key={user.id}>
+                {pageNumbers}
+            </div>
+            {
+                props.users.map(user => {
+                    return (
+                        <div key={user.id}>
                             <span>
                                 <div>
-                                    <img
-                                        className={styles.userAvatar}
-                                        src={user.photos.small
-                                            ? user.photos.small
-                                            : avatarImg}
-                                        alt=""/>
+                                    <NavLink to={`/profile/${user.id}`}>
+                                        <img
+                                            className={styles.userAvatar}
+                                            src={user.photos.small
+                                                ? user.photos.small
+                                                : avatarImg}
+                                            alt=""/>
+                                    </NavLink>
+
                                 </div>
                                 <div>
                                     {
                                         user.followed
-                                            ? <button onClick={() => this.unfollow(user.id)}>Unfollow</button>
-                                            : <button onClick={() => this.follow(user.id)}>Follow</button>
+                                            ? <button onClick={() => props.unfollow(user.id)}>Unfollow</button>
+                                            : <button onClick={() => props.follow(user.id)}>Follow</button>
                                     }
 
                                 </div>
                             </span>
-                                <span>
+                            <span>
                                 <span>
                                     <div>
                                         {user.name}
@@ -64,13 +69,15 @@ class Users extends React.Component {
                                     </div>
                                 </span>
                             </span>
-                            </div>
-                        )
-                    })
-                }
-            </div>
-        )
-    }
+                        </div>
+                    )
+                })
+            }
+        </div>
+    )
 }
 
+
 export default Users;
+
+

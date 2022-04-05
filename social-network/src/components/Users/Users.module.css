@@ -2,4 +2,16 @@
 .userAvatar {
     width: 100px;
     height: 100px;
+    border-radius: 50%;
+}
+
+.selectedPage {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.pageNumber {
+    margin-right: 5px;
+    user-select: none;
+    cursor: pointer;
 }

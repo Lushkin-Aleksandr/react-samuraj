@@ -8,3 +8,8 @@
 .descriptionBlock {
     padding: 10px;
 }
+
+.fullName {
+    font-size: 32px;
+    color: #225465;
+}
