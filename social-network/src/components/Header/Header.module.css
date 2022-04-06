@@ -1,7 +1,7 @@
 .header {
     grid-area: h;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     background-color: #225465;
     border-bottom: 1px solid #ffffff;
@@ -10,4 +10,12 @@
 .header img {
     height: 40px;
     margin-left: 5px;
+}
+.loginBlock {
+    margin-right: 5px;
+    color: #fff;
+}
+
+.loginBlock a:hover {
+    color: #328b41;
 }
