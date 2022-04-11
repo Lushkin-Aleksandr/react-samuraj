@@ -9,3 +9,8 @@
 .addPost {
     margin-bottom: 10px;
 }
+
+.addPost textarea {
+    resize: none;
+    padding: 5px;
+}

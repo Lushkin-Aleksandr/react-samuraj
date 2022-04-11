@@ -9,9 +9,8 @@ const axiosInstance = axios.create({
 });
 
 
-
 export const usersAPI = {
-    getUsers(currentPage = 1, pageSize= 10) {
+    getUsers(currentPage = 1, pageSize = 10) {
         return axiosInstance.get(`users?page=${currentPage}&count=${pageSize}`)
             .then(response => response.data);
     },
@@ -28,6 +27,27 @@ export const usersAPI = {
 export const profileAPI = {
     getProfile(userId) {
         return axiosInstance.get(`profile/${userId}`)
-            .then(response => response.data)
+            .then(response => response.data);
+    },
+    getStatus(userId) {
+        return axiosInstance.get(`profile/status/${userId}`)
+            .then(response => response.data);
+    },
+    updateStatus(status) {
+        return axiosInstance.put(`profile/status`, { status: status })
+            .then(response => response.data);
+    }
+
+}
+export const authAPI = {
+    me() {
+        return axiosInstance.get(`auth/me`).then(response => response.data);
+    },
+    logIn(loginData) {
+        debugger
+        return  axiosInstance.post('auth/login', loginData).then(response => response.data);
+    },
+    logOut() {
+        return axiosInstance.delete('auth/login').then(response => response.data);
     }
 }
