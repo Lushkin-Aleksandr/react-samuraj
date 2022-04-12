@@ -71,8 +71,7 @@
     margin-bottom: 10px;
 }
 
-.addMessage textarea {
-    flex-grow: 1;
+.addMessage .addMessageTextarea {
     resize: none;
     outline: none;
     padding: 3px;
