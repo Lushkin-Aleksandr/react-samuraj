@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/react-samuraj/static/css/main.b4ed32f5.css",
+    "main.js": "/react-samuraj/static/js/main.d05da277.js",
+    "static/css/442.e99369c6.chunk.css": "/react-samuraj/static/css/442.e99369c6.chunk.css",
+    "static/js/442.5143731b.chunk.js": "/react-samuraj/static/js/442.5143731b.chunk.js",
+    "static/css/954.7c128137.chunk.css": "/react-samuraj/static/css/954.7c128137.chunk.css",
+    "static/js/954.8c74535d.chunk.js": "/react-samuraj/static/js/954.8c74535d.chunk.js",
+    "static/js/787.eaaab13d.chunk.js": "/react-samuraj/static/js/787.eaaab13d.chunk.js",
+    "static/media/main-logo.png": "/react-samuraj/static/media/main-logo.5979addc092a8fc0df31.png",
+    "static/media/avatar.png": "/react-samuraj/static/media/avatar.5fedd64859d19a7179b8.png",
+    "static/media/tail-spin.svg": "/react-samuraj/static/media/tail-spin.86194a552d45044eea10396f20518cab.svg",
+    "index.html": "/react-samuraj/index.html",
+    "main.b4ed32f5.css.map": "/react-samuraj/static/css/main.b4ed32f5.css.map",
+    "main.d05da277.js.map": "/react-samuraj/static/js/main.d05da277.js.map",
+    "442.e99369c6.chunk.css.map": "/react-samuraj/static/css/442.e99369c6.chunk.css.map",
+    "442.5143731b.chunk.js.map": "/react-samuraj/static/js/442.5143731b.chunk.js.map",
+    "954.7c128137.chunk.css.map": "/react-samuraj/static/css/954.7c128137.chunk.css.map",
+    "954.8c74535d.chunk.js.map": "/react-samuraj/static/js/954.8c74535d.chunk.js.map",
+    "787.eaaab13d.chunk.js.map": "/react-samuraj/static/js/787.eaaab13d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b4ed32f5.css",
+    "static/js/main.d05da277.js"
+  ]
+}
