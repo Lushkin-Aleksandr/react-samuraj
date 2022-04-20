@@ -1,0 +1,27 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.selectedPage {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.pageNumber:not(:last-of-type) {
+    margin-right: 5px;
+    user-select: none;
+    cursor: pointer;
+}
+
+.controlBtns {
+    padding: 0 10px;
+}
+
+.prevBtn {
+    margin-right: 5px;
+}
+
+.nextBtn {
+    margin-left: 5px;
+}
